@@ -13,7 +13,8 @@ if len(sys.argv)>4:
 	date=sys.argv[4]
 if len(sys.argv)>5:
 	for i in range(5,len(sys.argv)-1):
-		packages.append(sys.argv[i]
+		packages.append(sys.argv[i])
+
 with open(filename,"w+") as f:
 	f.write("\\documentclass{article}\n")
 	f.write("\\usepackage[utf8]{inputenc}\n")
@@ -24,4 +25,8 @@ with open(filename,"w+") as f:
 	f.write("\\lhead{"+title+"}\n")
 	f.write("\\rhead{\\thepage}\n")
 	f.write("\\cfoot{"+author+"}\n")
-	f.write("\\pagestyle{fancy}\n\\begin{document}\n\\maketitle\n\\end{document}\n")
+	f.write("\\pagestyle{fancy}\n")
+	f.write("\\title{"+title+"}\n")
+	f.write("\\author{"+author+"}\n")
+	f.write("\\date{"+date+"}\n")
+	f.write("\\begin{document}\n\\maketitle\n\\end{document}\n")
