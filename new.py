@@ -12,7 +12,7 @@ packages=[]
 if len(sys.argv)>4:
 	date=sys.argv[4]
 if len(sys.argv)>5:
-	for i in range(5,len(sys.argv)-1):
+	for i in range(5,len(sys.argv)):
 		packages.append(sys.argv[i])
 
 with open(filename,"w+") as f:
