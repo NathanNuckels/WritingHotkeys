@@ -10,17 +10,10 @@ author=sys.argv[3]
 date=""
 packages=[]
 if len(sys.argv)>4:
-	if sys.argv[4]=="-d":
-		if len(sys.argv)>=5:
-			date=sys.argv[5]
-		else:
-			print("Error: -d was used but no date was specified")
-			sys.exit()
-		for i in range(5,len(sys.argv)-1):
-			packages.append(sys.argv[i])
-	else:
-		for i in range(4,len(sys.argv)-1):
-			packages.append(sys.argv[i])
+	date=sys.argv[4]
+if len(sys.argv)>5:
+	for i in range(5,len(sys.argv)-1):
+		packages.append(sys.argv[i]
 with open(filename,"w+") as f:
 	f.write("\\documentclass{article}\n")
 	f.write("\\usepackage[utf8]{inputenc}\n")
