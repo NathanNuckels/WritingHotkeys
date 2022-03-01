@@ -6,10 +6,7 @@ Usage:
 
 Runs a custom command. There are no commands currently. I am trying to come up with some ideas.
 
-```python new.py <FILENAME> <TITLE> <AUTHOR> [-d date] [PACKAGES...]```
-
-!! This commmand is up for review. !!
-
+```python new.py <FILENAME> <TITLE> <AUTHOR> [date] [PACKAGES...]``
 Creates a new LaTeX file with the given title author, date, and packages. It also includes `fancyhdr` by default.
 
 ```python findreplace.py <INPUT-FILE> <TEMPLATE> [OUTPUT-FILE]```
