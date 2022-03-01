@@ -21,7 +21,7 @@ if len(sys.argv)>4:
 	else:
 		for i in range(4,len(sys.argv)-1):
 			packages.append(sys.argv[i])
-with open(filename,"r+") as f:
+with open(filename,"w+") as f:
 	f.write("\\documentclass{article}\n")
 	f.write("\\usepackage[utf8]{inputenc}\n")
 	f.write("\\usepackage[english]{babel}\n")
