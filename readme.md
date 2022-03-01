@@ -8,6 +8,8 @@ Runs a custom command. There are no commands currently. I am trying to come up w
 
 ```python new.py <FILENAME> <TITLE> <AUTHOR> [-d date] [PACKAGES...]```
 
+!! This commmand is up for review. !!
+
 Creates a new LaTeX file with the given title author, date, and packages. It also includes `fancyhdr` by default.
 
 ```python findreplace.py <INPUT-FILE> <TEMPLATE> [OUTPUT-FILE]```
