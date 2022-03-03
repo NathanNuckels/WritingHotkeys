@@ -33,8 +33,10 @@ can type `@@` into ANY textbox and it will be replaced with
 `my.super.long.email@the.email.com`
 or whatever. This is my favorate one.
 
-```python levelup.py [bool: DELETE] [int: NUMBER OF MESSAGES] [float: DELAY]```
+```python levelup.py```
 
-A basic script to level up in Discord. If delete is true, it will delete the message after it sends it.
-You can also set the number of messages to send. The delay varible sets the delay in secconds between messages.
-if delete is false, it should be greater than 1. If delete is true it should be greater than 2. 
+A basic script to level up in Discord. 
+
+```python copy to discord <FILENAME>```
+
+Sends keystrokes to type out the contents of a fle into discord as a code block.

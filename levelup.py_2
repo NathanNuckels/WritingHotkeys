@@ -1,0 +1,66 @@
+import time
+import sys
+try:
+    import keyboard as k
+except ModuleNotFoundError:
+    print("Fatal: Kyboard not installed!!!")
+    print("To install it, type")
+    print("\tpip install keyboard")
+    exit(1)
+
+def raiseError(_input):
+    print("\nAn error has occured. View the last line of the Traceback for info.")
+    print("\n")
+    raise Exception(_input)
+
+def vwrite(stringgg):
+    k.write(stringgg)
+    k.press_and_release("enter")
+delete=False
+messages=0
+delay=1
+args=sys.argv[1:]
+if len(args)>0:
+    #Get delete varible
+    if args[0].lower()=="true":
+        delete=True
+    elif args[0].lower()=="false":
+        delete=False
+    else:
+        raiseError("Varible DELETE must be a bool.")
+if len(args)>1:
+    try:
+        delay=int(args[1])
+    except ValueError:
+        raiseError("Varible DELAY must be an int.")
+    if delay<1:
+        raiseError("Varible DELAY must be greater than or equal to 1")
+if len(args)>3:
+    raiseError("Too many arguments.")
+
+print("Press 0 to start.")
+if messages==0:
+    print("Hold 9 to stop.")
+else:
+    print("Hold 9 to force quit")
+
+count=0
+k.wait("0")
+k.press_and_release("backspace")
+while True:
+    k.write(str(count))
+    k.press_and_release("enter")
+    vwrite("Wrote "+str(count)) #db
+    time.sleep(delay)
+    if delete:
+        #k.press_and_release("up, "+("backspace, "*len(str(count))+"enter, enter"))
+        vwrite("Deleted. [["+str(count)) #db
+    count=count+1
+    print("After:"+str(count))
+    if k.is_pressed("9"):
+        break
+    print("----")
+
+k.press_and_release("enter, enter")
+k.write("`Finished`")
+k.press_and_release("enter")
